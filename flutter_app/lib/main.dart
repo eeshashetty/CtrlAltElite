@@ -1,17 +1,23 @@
+// hello gais packages import kar dena
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'dart:async';
 import 'camera_scanner.dart';
 
+
+// need this
 List<CameraDescription> cameras;
 
+//just change your void main to this. VERY IMPORTANT EVERYTHING THAT'S HERE
 Future<Null> main() async{
   cameras = await availableCameras();
   runApp(MyApp());
 }
 
+// change whatever issok but MyHomePage(cameras) ko mat change karna
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,8 +31,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  var cameras;
-  MyHomePage(this.cameras);
+  var cameras; //important
+  MyHomePage(this.cameras);  //important
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -38,12 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text("Camera Try"),
       ),
-      body: CameraScreen(widget.cameras)
-       // This trailing comma makes auto-formatting nicer for build methods.
+      body: CameraScreen(widget.cameras) // basically for your onPressed when you transition to Camera Scanner call this
     );
   }
 }
