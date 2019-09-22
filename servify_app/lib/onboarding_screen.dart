@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_realtime_detection/home.dart';
 import 'package:flutter_realtime_detection/utilities/styles.dart';
 import 'package:camera/camera.dart';
+import 'package:flutter_realtime_detection/wallet.dart';
 
 
 
@@ -54,6 +55,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
     return Scaffold(
+      floatingActionButton:FloatingActionButton(
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ListPage()),
+          );
+        },
+        child: Icon(Icons.devices,
+        color: Colors.white),
+        backgroundColor: Colors.deepPurpleAccent,
+      ),
       body:
       AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
@@ -76,19 +88,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                /*Container(
-                  alignment: Alignment.centerRight,
-                  child: FlatButton(
-                    onPressed: () => print('Skip'),
-                    child: Text(
-                      'Skip',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ),
-                ),*/
+
                 Container(
                   height: 600.0,
                   child: PageView(
@@ -121,7 +121,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'A scanner for electronic devices.',
                               style: kSubtitleStyle,
                             ),
                           ],
@@ -143,12 +143,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Device Detection \n AR Method',
+                              'Device Detection',
                               style: kTitleStyle,
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'with TFlite Models.',
                               style: kSubtitleStyle,
                             ),
                           ],
@@ -170,12 +170,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Device Detection\nWifi Scanning Method',
+                              'Device Wallet',
                               style: kTitleStyle,
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'Press the Device icon to check out the Device Wallet.',
                               style: kSubtitleStyle,
                             ),
                           ],
@@ -202,21 +202,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Text(
-                                  'Next',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22.0,
-                                  ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                              ],
                             ),
                           ),
                         ),

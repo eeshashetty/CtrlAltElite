@@ -7,6 +7,7 @@ import 'camera.dart';
 import 'bndbox.dart';
 import 'models.dart';
 
+
 class HomePage extends StatefulWidget {
   final List<CameraDescription> cameras;
 
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> {
     loadModel();
   }
 
+
   setRecognitions(recognitions, imageHeight, imageWidth) {
     setState(() {
       _recognitions = recognitions;
@@ -75,32 +77,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
     onSelect(yolo);
+
     return Scaffold(
       body: _model == ""
           ? null
-      //Center(
-//              child: Column(
-//                mainAxisAlignment: MainAxisAlignment.center,
-//                children: <Widget>[
-////                  RaisedButton(
-//                    child: const Text(ssd),
-//                    onPressed: () => onSelect(ssd),
-//                  ),
-                //  RaisedButton(
-                  //  child: const Text(yolo),
-                   // onPressed: () => onSelect(yolo),
-                 // ),
-//                  RaisedButton(
-//                    child: const Text(mobilenet),
-//                    onPressed: () => onSelect(mobilenet),
-//                  ),
-//                  RaisedButton(
-//                    child: const Text(posenet),
-//                    onPressed: () => onSelect(posenet),
-//                  ),
-         //       ],
-           //   ),
-           // )
           : Stack(
               children: [
                 Camera(
@@ -108,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                   _model,
                   setRecognitions,
                 ),
+
                 BndBox(
                     _recognitions == null ? [] : _recognitions,
                     math.max(_imageHeight, _imageWidth),
