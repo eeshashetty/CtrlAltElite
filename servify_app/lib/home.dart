@@ -74,31 +74,33 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
+    onSelect(yolo);
     return Scaffold(
       body: _model == ""
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  RaisedButton(
-                    child: const Text(ssd),
-                    onPressed: () => onSelect(ssd),
-                  ),
-                  RaisedButton(
-                    child: const Text(yolo),
-                    onPressed: () => onSelect(yolo),
-                  ),
-                  RaisedButton(
-                    child: const Text(mobilenet),
-                    onPressed: () => onSelect(mobilenet),
-                  ),
-                  RaisedButton(
-                    child: const Text(posenet),
-                    onPressed: () => onSelect(posenet),
-                  ),
-                ],
-              ),
-            )
+          ? null
+      //Center(
+//              child: Column(
+//                mainAxisAlignment: MainAxisAlignment.center,
+//                children: <Widget>[
+////                  RaisedButton(
+//                    child: const Text(ssd),
+//                    onPressed: () => onSelect(ssd),
+//                  ),
+                //  RaisedButton(
+                  //  child: const Text(yolo),
+                   // onPressed: () => onSelect(yolo),
+                 // ),
+//                  RaisedButton(
+//                    child: const Text(mobilenet),
+//                    onPressed: () => onSelect(mobilenet),
+//                  ),
+//                  RaisedButton(
+//                    child: const Text(posenet),
+//                    onPressed: () => onSelect(posenet),
+//                  ),
+         //       ],
+           //   ),
+           // )
           : Stack(
               children: [
                 Camera(
@@ -113,7 +115,9 @@ class _HomePageState extends State<HomePage> {
                     screen.height,
                     screen.width,
                     _model),
+
               ],
+
             ),
     );
   }

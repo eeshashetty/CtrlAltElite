@@ -51,6 +51,10 @@ flutter:
    - assets/mobilenet_v1_1.0_224.tflite
    - assets/mobilenet_v1_1.0_224.txt
    - assets/posenet_mv1_075_float_from_checkpoints.tflite
+   - assets/images/onboarding0.png
+   - assets/images/onboarding1.png
+   - assets/images/onboarding2.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

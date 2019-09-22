@@ -72,6 +72,7 @@ class BndBox extends StatelessWidget {
     List<Widget> _renderStrings() {
       double offset = -10;
       return results.map((re) {
+        print(re["label"]);
         offset = offset + 14;
         return Positioned(
           left: 10,
